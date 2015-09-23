@@ -25,5 +25,6 @@
     <string name="msg_save_success">Registro salvo com sucesso!</string>
     <string name="msg_delete_success">Registro excluído com sucesso!</string>
     <string name="msg_confirm_delete">Deseja excluir este registro?</string>
+    <string name="ADD">ADD</string>
 
 </resources>

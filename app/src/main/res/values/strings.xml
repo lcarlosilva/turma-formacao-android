@@ -24,5 +24,6 @@
     <string name="msg_save_success">Save successful!</string>
     <string name="msg_delete_success">Delete successful!</string>
     <string name="msg_confirm_delete">Want to delete this record?</string>
+    <string name="ADD">ADD</string>
 
 </resources>

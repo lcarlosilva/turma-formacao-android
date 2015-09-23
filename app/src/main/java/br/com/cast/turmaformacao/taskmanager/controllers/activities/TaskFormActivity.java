@@ -1,6 +1,7 @@
 package br.com.cast.turmaformacao.taskmanager.controllers.activities;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.cast.turmaformacao.taskmanager.R;
+import br.com.cast.turmaformacao.taskmanager.controllers.adapters.ColorListAdapter;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
 import br.com.cast.turmaformacao.taskmanager.model.services.TaskBusinessService;
 import br.com.cast.turmaformacao.taskmanager.util.FormHelper;
@@ -19,6 +21,7 @@ public class TaskFormActivity extends AppCompatActivity {
     private EditText editTextName;
     private EditText editTextDescription;
     private Button buttonSave;
+    private Button buttonAddColors;
     private Task task;
 
     @Override
@@ -30,6 +33,8 @@ public class TaskFormActivity extends AppCompatActivity {
 
         bindEditTextName();
         bindEditTextDescription();
+        bindButtonAddColors();
+
         bindButton();
     }
 
@@ -39,6 +44,17 @@ public class TaskFormActivity extends AppCompatActivity {
             this.task = (Task) extras.getParcelable(PARAM_TASK);
         }
         this.task = this.task == null ? new Task() : this.task;
+    }
+
+    private void bindButtonAddColors() {
+        buttonAddColors = (Button) findViewById(R.id.addColors);
+        buttonAddColors.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent goToColors = new Intent(TaskFormActivity.this, LabelFormActivity.class);
+                startActivity(goToColors);
+            }
+        });
     }
 
     private void bindButton() {
